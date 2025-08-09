@@ -1,9 +1,7 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
+    id("com.google.devtools.ksp")
 }
 
 apply(from = "${rootProject.projectDir}/android-common.gradle")
@@ -16,5 +14,5 @@ dependencies {
 
     implementation(libs.android.room)
     implementation(libs.android.roomKtx)
-    kapt(libs.android.room.compiler)
+    ksp(libs.android.room.compiler)
 }
